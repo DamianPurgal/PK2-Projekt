@@ -1,0 +1,92 @@
+P Adam Kowalski pilot
+L 1 1 2020 Polska Niemcy 0 30 449
+L 1 1 2020 Niemcy Polska 0 30 449
+L 1 1 2020 Polska Hiszpania 0 40 630
+L 1 1 2020 Hiszpania Polska 0 40 440
+L 2 1 2020 Polska Kanada 11 10 5202
+L 3 1 2020 Kanada USA 0 30 530
+L 3 1 2020 USA Brazylia 5 5 1342
+L 4 1 2020 Brazylia Polska 13 25 7400
+L 5 1 2020 Polska Argentyna 14 0 7530
+L 6 1 2020 Argentyna Australia 20 15 9300
+L 7 1 2020 Australia Chiny 5 0 1340
+L 8 1 2020 Chiny Japonia 1 0  640
+L 9 1 2020 Japonia Indie 3 40 1603
+L 9 1 2020 Indie Chiny 3 0 1384
+L 10 1 2020 Chiny Japonia 1 0 640
+L 10 1 2020 Japonia Chiny 1 0 640
+L 10 1 2020 Chiny Japonia 1 0 640
+L 11 1 2020 Japonia Polska 8 20 6302
+L 12 1 2020 Polska Hiszpania 0 40 640
+L 13 1 2020 Hiszpania Francja 0 20 450
+L 1 2 2020 Polska Niemcy 0 30 449 
+L 1 2 2020 Niemcy Hiszpania 0 30 482
+L 10 2 2020 Polska UK 1 15 734
+L 11 2 2020 UK Polska 1 15 734
+L 14 2 2020 Polska Niemcy 0 30 449
+L 17 2 2020 Niemcy Hiszpania 0 40 640
+L 21 2 2020 Polska Francja 0 35 531
+P Piotr Nowak pilot
+L 13 1 2020 USA Kanada 0 30 530
+L 14 1 2020 Kanada Brazylia 4 10 1340
+L 15 1 2020 USA Kanada 0 30 530
+L 16 1 2020 Kanada Argentyna 5 5 1610
+L 16 1 2020 Argentyna USA 4 45 1420
+L 13 2 2020 USA Kanada 0 30 530
+L 14 2 2020 Kanada Brazylia 4 10 1340
+L 15 2 2020 USA Kanada 0 30 530
+L 16 2 2020 Kanada Argentyna 5 5 1610
+L 16 2 2020 Argentyna USA 4 45 1420
+L 13 3 2020 USA Kanada 0 30 530
+L 14 3 2020 Kanada Brazylia 4 10 1340
+L 15 3 2020 USA Kanada 0 30 530
+L 16 3 2020 Kanada Argentyna 5 5 1610
+L 16 3 2020 Argentyna USA 4 45 1420
+L 13 4 2020 USA Kanada 0 30 530
+L 14 4 2020 Kanada Brazylia 4 10 1340
+L 15 4 2020 USA Kanada 0 30 530
+L 16 4 2020 Kanada Argentyna 5 5 1610
+L 16 4 2020 Argentyna USA 4 45 1420
+P Grzegorz Brzeczyszczykiewicz kierownik
+L 1 2 2020 Chiny Japonia 0 30 463
+L 3 2 2020 Japonia Indie 3 15 1343
+L 5 2 2020 Indie Tajlandia 2 40 1092
+L 7 2 2020 Tajlandia Japonia 2 30 984
+L 9 2 2020 Japonia Chiny 0 30 463
+L 11 2 2020 Chiny Japonia 0 30 463
+L 13 2 2020 Japonia Indie 3 15 1343
+L 15 2 2020 Indie Tajlandia 2 40 1092
+L 17 2 2020 Tajlandia Japonia 2 30 984
+L 19 2 2020 Japonia Chiny 0 30 463
+L 3 3 2020 Japonia Niemcy 5778
+L 5 3 2020 Niemcy Japonia 5778
+L 7 3 2020 Japonia Niemcy 5778
+L 9 3 2020 Niemcy Japonia 5778
+L 1 4 2020 Chiny Japonia 0 30 463
+L 3 4 2020 Japonia Indie 3 15 1343
+L 5 4 2020 Indie Tajlandia 2 40 1092
+L 7 4 2020 Tajlandia Japonia 2 30 984
+L 9 4 2020 Japonia Chiny 0 30 463
+L 11 4 2020 Chiny Japonia 0 30 463
+L 13 4 2020 Japonia Indie 3 15 1343
+L 15 4 2020 Indie Tajlandia 2 40 1092
+L 17 4 2020 Tajlandia Japonia 2 30 984
+L 19 4 2020 Japonia Chiny 0 30 463
+P Anna Kowalska Stewardessa
+L 13 1 2020 USA Kanada 0 30 530
+L 14 1 2020 Kanada Brazylia 4 10 1340
+L 15 1 2020 USA Kanada 0 30 530
+L 16 1 2020 Kanada Argentyna 5 5 1610
+L 16 1 2020 Argentyna USA 4 45 1420
+L 13 2 2020 USA Kanada 0 30 530
+L 14 2 2020 Kanada Brazylia 4 10 1340
+L 15 2 2020 USA Kanada 0 30 530
+L 16 2 2020 Kanada Argentyna 5 5 1610
+L 16 2 2020 Argentyna USA 4 45 1420
+L 13 3 2020 USA Kanada 0 30 530
+L 14 3 2020 Kanada Brazylia 4 10 1340
+L 11 4 2020 Chiny Japonia 0 30 463
+L 13 4 2020 Japonia Indie 3 15 1343
+L 15 4 2020 Indie Tajlandia 2 40 1092
+L 17 4 2020 Tajlandia Japonia 2 30 984
+L 19 4 2020 Japonia Chiny 0 30 463

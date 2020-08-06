@@ -1,0 +1,5 @@
+P Adam Kowalski pilot
+L 1 1 2020 Polska Niemcy 0 30 449
+L 1 1 2020 Niemcy Polska 0 30 449
+P Piotr Nowak pilot
+L 13 1 2020 USA Kanada 0 30 530
