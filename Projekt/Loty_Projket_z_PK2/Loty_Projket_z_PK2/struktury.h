@@ -1,10 +1,14 @@
 #ifndef STRUKTURY_H
 #define STRUKTURY_H
-typedef struct lista_lotow
+typedef struct data
 {
 	int dzien;
 	int miesiac;
 	int rok;
+}data;
+typedef struct lista_lotow
+{
+	data data;
 	char* kraj_poczatkowy;
 	char* kraj_koncowy;
 	int godziny_lotu;
