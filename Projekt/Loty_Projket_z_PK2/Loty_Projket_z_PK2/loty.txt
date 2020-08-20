@@ -22,7 +22,7 @@ L 13 1 2020 Hiszpania Francja 0 20 450
 L 1 2 2020 Polska Niemcy 0 30 449 
 L 1 2 2020 Niemcy Hiszpania 0 30 482
 L 10 2 2020 Polska UK 1 15 734
-L 11 2 2020 UK Polska 1 15 734
+L 11 2 2020 UK Polska 1 15 734	
 L 14 2 2020 Polska Niemcy 0 30 449
 L 17 2 2020 Niemcy Hiszpania 0 40 640
 L 21 2 2020 Polska Francja 0 35 531
@@ -47,7 +47,7 @@ L 14 4 2020 Kanada Brazylia 4 10 1340
 L 15 4 2020 USA Kanada 0 30 530
 L 16 4 2020 Kanada Argentyna 5 5 1610
 L 16 4 2020 Argentyna USA 4 45 1420
-P Grzegorz Brzeczyszczykiewicz kierownik
+P Pawel Pawlowski kierownik
 L 1 2 2020 Chiny Japonia 0 30 463
 L 3 2 2020 Japonia Indie 3 15 1343
 L 5 2 2020 Indie Tajlandia 2 40 1092
@@ -58,10 +58,10 @@ L 13 2 2020 Japonia Indie 3 15 1343
 L 15 2 2020 Indie Tajlandia 2 40 1092
 L 17 2 2020 Tajlandia Japonia 2 30 984
 L 19 2 2020 Japonia Chiny 0 30 463
-L 3 3 2020 Japonia Niemcy 5778
-L 5 3 2020 Niemcy Japonia 5778
-L 7 3 2020 Japonia Niemcy 5778
-L 9 3 2020 Niemcy Japonia 5778
+L 3 3 2020 Japonia Niemcy 11 15 5778
+L 5 3 2020 Niemcy Japonia 11 15 5778
+L 7 3 2020 Japonia Niemcy 11 15 5778
+L 9 3 2020 Niemcy Japonia 11 15 5778
 L 1 4 2020 Chiny Japonia 0 30 463
 L 3 4 2020 Japonia Indie 3 15 1343
 L 5 4 2020 Indie Tajlandia 2 40 1092

@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_DEPRECATE
-#define MAX_ZNAKOW 10
+#define MAX_ZNAKOW 20
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,7 +9,7 @@
 
 char* kontynenty[6][6] = {
 	{ "Polska","Niemcy","Hiszpania","Francja","Wlochy","UK" },
-	{ "Chiny","Japonia","Tajlandia", "", "", "" },
+	{ "Chiny","Japonia","Tajlandia", "Indie", "", "" },
 	{ "Australia", "", "", "", "", "" },
 	{ "USA","Kanada", "", "", "", "" },
 	{ "Brazylia","Argentyna", "", "", "", "" },
@@ -24,7 +24,7 @@ char* kontynenty[6][6] = {
 5-Afryka
 */
 
-int jakiKontynent(char* kraj)
+int jaki_kontynent(char* kraj)
 {
 	for (int i = 0; i < 6; i++)
 	{
@@ -56,11 +56,13 @@ void dodaj_lot_do_listy(lista_lotow** pHead, lista_lotow** lot)
 }
 void wyswietl_liste_lotow(lista_lotow* pHead, data dataOd, data dataDo)
 {
+	printf("%-16s %-15s %-12s %-6s %-10s\n", "Kraj_poczatkowy", "Kraj_koncowy", "Data", "Mile", "Czas lotu");
+	printf("======================================================================\n");
 	while (pHead != NULL)
 	{
 		if (porownaj_daty(dataOd, pHead->data) <= 0 && porownaj_daty(dataDo, pHead->data) >= 0)
 		{
-			printf("z: %s do: %s data: %d-%d-%d mile: %d  czas lotu: %d g %d m \n", pHead->kraj_poczatkowy, pHead->kraj_koncowy,
+			printf("%-16s %-15s %-.2d-%-.2d-%-6d %-6d %-4dgodz. %-2d min.\n", pHead->kraj_poczatkowy, pHead->kraj_koncowy,
 				pHead->data.dzien, pHead->data.miesiac, pHead->data.rok, pHead->mile_lotu, pHead->godziny_lotu, pHead->minuty_lotu);
 		}
 		pHead = pHead->next;
@@ -68,6 +70,10 @@ void wyswietl_liste_lotow(lista_lotow* pHead, data dataOd, data dataDo)
 }
 void wyswietl_pracownikow_i_ich_loty(lista_pracownikow* pHead, data dataOd, data dataDo)
 {
+	printf("----------------------------------------------------------------------\n");
+	printf("                        Loty pracownikow:\n");
+	printf("                   od %-.2d-%-.2d-%-.2d do %-.2d-%-.2d-%-.2d\n", dataOd.dzien, dataOd.miesiac, dataOd.rok, dataDo.dzien, dataDo.miesiac, dataDo.rok);
+	printf("----------------------------------------------------------------------\n");
 	while (pHead != NULL)
 	{
 		printf("imie: %s nazwisko: %s stanowisko: %s \n", pHead->imie, pHead->nazwisko, pHead->stanowisko);
@@ -102,6 +108,38 @@ char* liczba_na_kontynent(int a)
 			return "BLAD";
 	}
 }
+char* lancuch_znakow_na_duze_litery(char* a)
+{
+	int l = strlen(a);
+	char* wynik = malloc(sizeof(char) * (l+1));
+	for (int i = 0; i < l; i++)
+	{
+		if (a[i] > 96 && a[i] < 147)
+			wynik[i] = a[i] - 32;
+		else
+			wynik[i] = a[i];
+	}
+	wynik[l] = '\0';
+	return wynik;
+}
+int kontynent_na_liczbe(char* kontynent)
+{
+	kontynent = lancuch_znakow_na_duze_litery(kontynent);
+	if (strcmp(kontynent,"EUROPA")==0)
+		return 0;
+	else if (strcmp(kontynent, "AZJA") == 0)
+		return 1;
+	else if (strcmp(kontynent, "AUSTRALIA") == 0)
+		return 2;
+	else if (strcmp(kontynent, "AMERYKA_POLNOCNA") == 0)
+		return 3;
+	else if (strcmp(kontynent, "AMERYKA_POLUDNIOWA") == 0)
+		return 4;
+	else if (strcmp(kontynent, "AFRYKA") == 0)
+		return 5;
+	else
+		return 404;
+}
 void wyswietl_zestawienie_lotow_pracownika_do_kontynentow(lista_pracownikow* pHead, data dataOd, data dataDo)
 {
 	int mile[6], godziny[6], minuty[6];
@@ -112,19 +150,25 @@ void wyswietl_zestawienie_lotow_pracownika_do_kontynentow(lista_pracownikow* pHe
 	{ 
 		if (porownaj_daty(dataOd, loty->data) <= 0 && porownaj_daty(dataDo, loty->data) >= 0)
 		{
-			mile[jakiKontynent(loty->kraj_koncowy)] += loty->mile_lotu;
-			godziny[jakiKontynent(loty->kraj_koncowy)] += loty->godziny_lotu;
-			minuty[jakiKontynent(loty->kraj_koncowy)] += loty->minuty_lotu;
+			mile[jaki_kontynent(loty->kraj_koncowy)] += loty->mile_lotu;
+			godziny[jaki_kontynent(loty->kraj_koncowy)] += loty->godziny_lotu;
+			minuty[jaki_kontynent(loty->kraj_koncowy)] += loty->minuty_lotu;
 		}
 		loty = loty->next;
 	}
 	int a;
+	printf("========================================\n"); 
+	printf("    Zestawienie lotow do kontynentow\n");
+	printf("       od %-.2d-%-.2d-%-.2d do %-.2d-%-.2d-%-.2d\n", dataOd.dzien, dataOd.miesiac, dataOd.rok, dataDo.dzien, dataDo.miesiac, dataDo.rok);
+	printf("========================================\n");
+	printf("%-20s %-8s %-5s %-5s \n", "Kontynent", "Mile", "godz.", "min.");
+	printf("----------------------------------------\n");
 	for (int i = 0; i < 6; i++)
 	{
 		a = minuty[i] / 60;
 		godziny[i] += a;
 		minuty[i] -= a * 60;
-		printf("Kontynent: %s mile: %d godziny: %d minuty: %d \n", liczba_na_kontynent(i), mile[i], godziny[i], minuty[i]);
+		printf("%-20s %-8d %-5d %-5d \n", liczba_na_kontynent(i), mile[i], godziny[i], minuty[i]);
 	}
 
 }
@@ -197,6 +241,53 @@ int napis_na_liczbe(char* napis)
 	}
 	free(napis);
 	return wynik;
+}
+int ilosc_elementow_w_liscie_pracownikow(lista_pracownikow* pHead)
+{
+	int wynik = 0;
+	while (pHead != NULL)
+	{
+		wynik++;
+		pHead = pHead->next;
+	}
+	return wynik;
+}
+void wyswietl_zestawienie_lotow_pracownikow_do_kontynentu(lista_pracownikow* pHead, data dataOd, data dataDo, char* kontynent)
+{
+	int kontynent_liczba = kontynent_na_liczbe(kontynent);
+	int mile = 0, godziny = 0, minuty = 0;
+	int a;
+	lista_lotow* loty;
+	printf("============================================\n");
+	printf("    Zestawienie lotow do: %s \n", kontynent);
+	printf("         od %-.2d-%-.2d-%-.2d do %-.2d-%-.2d-%-.2d\n", dataOd.dzien, dataOd.miesiac, dataOd.rok, dataDo.dzien, dataDo.miesiac, dataDo.rok);
+	printf("============================================\n");
+	printf("%-12s %-12s %-7s %-5s %-5s \n", "Imie", "Nazwisko", "Mile", "godz.", "min.");
+	printf("--------------------------------------------\n");
+	while (pHead != NULL)
+	{
+		loty = pHead->loty;
+		while (loty != NULL)
+		{
+			if (jaki_kontynent(loty->kraj_koncowy) == kontynent_liczba)
+			{
+				if (porownaj_daty(dataOd, loty->data) <= 0 && porownaj_daty(dataDo, loty->data) >= 0)
+				{
+					mile += loty->mile_lotu;
+					godziny += loty->godziny_lotu;
+					minuty += loty->minuty_lotu;
+				}
+			}
+			loty = loty->next;
+		}
+		a = minuty / 60;
+		godziny += a;
+		minuty -= a * 60;
+		printf("%-12s %-12s %-7d %-5d %-5d \n", pHead->imie, pHead->nazwisko, mile, godziny, minuty);
+		minuty = godziny = mile = 0;
+		pHead = pHead->next;
+	}
+	
 }
 lista_pracownikow* wczytaj_pracownika(FILE* plik)
 {
