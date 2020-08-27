@@ -1,12 +1,6 @@
 #ifndef FUNKCJE_POMOCNICZE
 #define FUNKCJE_POMOCNICZE
 #include "struktury.h"
-/** Funkcja ?????????????????????????????????????????????????????
-	@param argc iloœæ argumentów przes³anych do programu
-	@param argv[] tablica argumentów przes³anych do programu
-	@param pHead wskaŸnik na g³owê listy pracowników
-	*/
-void wyszukaj_zapytanie(int argc, char* argv[], lista_pracownikow* pHead);
 /** Funkcja okreœlaj¹ca na jakim kontynencie le¿y dany kraj
 	@param kraj nazwa kraju
 	@return liczba odpowiadaj¹ca nazwie kontynentu

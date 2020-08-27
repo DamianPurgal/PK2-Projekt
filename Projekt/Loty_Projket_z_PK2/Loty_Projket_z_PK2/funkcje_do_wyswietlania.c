@@ -10,9 +10,14 @@
 
 void wyswietl_liste_pracownikow(lista_pracownikow* pHead)
 {
+	printf("=================================================\n");
+	printf("                 LISTA PRACOWNIKOW               \n");
+	printf("=================================================\n");
+	printf("   %-12s %-12s %-12s\n", "Imie:", "Nazwisko:", "Stanowisko:");
+	printf("-------------------------------------------------\n");
 	while (pHead != NULL)
 	{
-		printf("imie: %s nazwisko: %s stanowisko: %s \n", pHead->imie, pHead->nazwisko, pHead->stanowisko);
+		printf("   %-12s %-12s %-12s\n", pHead->imie, pHead->nazwisko, pHead->stanowisko);
 		pHead = pHead->next;
 	}
 }
@@ -177,15 +182,23 @@ void wyswietl_dane_zestawienie(argumenty arg, lista_pracownikow * pHead)
 		}else if (strcmp(typ, "LLWP") == 0)
 		{
 			wyswietl_pracownikow_i_ich_loty(pHead, arg.dataOd, arg.dataDo);
-		}else if (strcmp(typ, "ZLWPDK") == 0)
+		}else if (strcmp(typ, "ZLWPDK") == 0 && arg.kontynent != NULL)
 		{
 			wyswietl_zestawienie_lotow_pracownikow_do_kontynentu(pHead, arg.dataOd, arg.dataDo, arg.kontynent);
-		}else if (strcmp(typ, "LLP") == 0)
+		}
+		else if(arg.imie != NULL && arg.nazwisko != NULL)
 		{
-			wyswietl_pracownika_i_jego_loty(znajdz_pracownika_w_liscie(pHead, arg.imie, arg.nazwisko), arg.dataOd, arg.dataDo);
-		}else if (strcmp(typ, "ZLPDWK") == 0)
+			if (strcmp(typ, "LLP") == 0)
+			{
+				wyswietl_pracownika_i_jego_loty(znajdz_pracownika_w_liscie(pHead, arg.imie, arg.nazwisko), arg.dataOd, arg.dataDo);
+			}else if (strcmp(typ, "ZLPDWK") == 0)
+			{
+				wyswietl_zestawienie_lotow_pracownika_do_kontynentow(znajdz_pracownika_w_liscie(pHead, arg.imie, arg.nazwisko), arg.dataOd, arg.dataDo);
+			}
+		}
+		else
 		{
-			wyswietl_zestawienie_lotow_pracownika_do_kontynentow(znajdz_pracownika_w_liscie(pHead, arg.imie, arg.nazwisko), arg.dataOd, arg.dataDo);
+			printf("Podano zle dane\n");
 		}
 		free(typ);
 	}

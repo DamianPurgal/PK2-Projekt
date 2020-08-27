@@ -36,6 +36,9 @@ void wyswietl_zestawienie_lotow_pracownika_do_kontynentow(lista_pracownikow* pHe
 	@param kontynent nazwa kontynentu
 	*/
 void wyswietl_zestawienie_lotow_pracownikow_do_kontynentu(lista_pracownikow* pHead, data dataOd, data dataDo, char* kontynent);
-
+/** Funkcja wyœwietla odpowiednie zestawienie na podstawie podanych do argumentów
+	@param arg argumenty
+	@param pHead wskaŸnik na g³owê listy pracowników
+	*/
 void wyswietl_dane_zestawienie(argumenty arg, lista_pracownikow * pHead);
 #endif

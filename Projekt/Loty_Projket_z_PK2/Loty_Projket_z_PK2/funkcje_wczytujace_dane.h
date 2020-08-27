@@ -17,7 +17,11 @@ char* wczytaj_napis(FILE* plik);
 	@return liczba odpowiadaj¹ca nazwie kontynentu
 	*/
 lista_pracownikow* wczytaj_dane_z_pliku(char* nazwa_pliku);
-
+/** Funkcja odczytuje argumenty programu i zwraca je w strukturze "argumenty"
+	@param argc iloœæ elementów w tablicy
+	@param argv tablica ³ancuchów znaków
+	@return odczytane argumenty w strukturze "argumenty"
+	*/
 argumenty odczytaj_argumenty(int argc, char* argv[]);
 
 #endif
