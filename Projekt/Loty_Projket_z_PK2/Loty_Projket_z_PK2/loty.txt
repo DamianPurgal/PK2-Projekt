@@ -10,7 +10,7 @@ L 4 1 2020 Brazylia Polska 13 25 7400
 L 5 1 2020 Polska Argentyna 14 0 7530
 L 6 1 2020 Argentyna Australia 20 15 9300
 L 7 1 2020 Australia Chiny 5 0 1340
-L 8 1 2020 Chiny Japonia 1 0  640
+L 8 1 2020 Chiny Japonia 1 0 640
 L 9 1 2020 Japonia Indie 3 40 1603
 L 9 1 2020 Indie Chiny 3 0 1384
 L 10 1 2020 Chiny Japonia 1 0 640

@@ -18,7 +18,16 @@
     <ClCompile Include="Źródło.c">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="funkcje.c">
+    <ClCompile Include="funkcje_do_wyswietlania.c">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="funkcje_zarzadzajace_listami.c">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="funkcje_wczytujace_dane.c">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="funkcje_pomocnicze.c">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,7 +35,16 @@
     <ClInclude Include="struktury.h">
       <Filter>Pliki zasobów</Filter>
     </ClInclude>
-    <ClInclude Include="funkcje.h">
+    <ClInclude Include="funkcje_do_wyswietlania.h">
+      <Filter>Pliki zasobów</Filter>
+    </ClInclude>
+    <ClInclude Include="funkcje_zarzadzajace_listami.h">
+      <Filter>Pliki zasobów</Filter>
+    </ClInclude>
+    <ClInclude Include="funkcje_wczytujace_dane.h">
+      <Filter>Pliki zasobów</Filter>
+    </ClInclude>
+    <ClInclude Include="funkcje_pomocnicze.h">
       <Filter>Pliki zasobów</Filter>
     </ClInclude>
   </ItemGroup>

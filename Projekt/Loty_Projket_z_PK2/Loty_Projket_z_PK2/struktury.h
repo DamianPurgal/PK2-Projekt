@@ -24,5 +24,14 @@ typedef struct lista_pracownikow
 	struct lista_pracownikow* next;
 	lista_lotow* loty;
 }lista_pracownikow;
-
+typedef struct argumenty
+{
+	char* plik_odczyt;
+	char* typ;
+	char* imie;
+	char* nazwisko;
+	char* kontynent;
+	data dataOd;
+	data dataDo;
+}argumenty;
 #endif

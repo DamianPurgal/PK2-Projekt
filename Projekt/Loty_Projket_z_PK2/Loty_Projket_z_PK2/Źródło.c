@@ -4,19 +4,20 @@
 #include <stdlib.h>
 #include <crtdbg.h>
 #include "struktury.h"
-#include "funkcje.h"
+#include "funkcje_do_wyswietlania.h"
+#include "funkcje_pomocnicze.h"
+#include "funkcje_wczytujace_dane.h"
+#include "funkcje_zarzadzajace_listami.h"
 
-int main()
+main(int argc, char* argv[])
 {
-	lista_pracownikow* pHead = NULL;
-	data a = { 1,1,2020 };
-	data b = { 1,1,2030 };
-	//char* kon = "europa";
-	pHead=wczytaj_dane_z_pliku("loty.txt");
-	//wyswietl_pracownikow_i_ich_loty(pHead, a, b);
-	//wyswietl_zestawienie_lotow_pracownika_do_kontynentow(pHead, a, b);
-	wyswietl_zestawienie_lotow_pracownikow_do_kontynentu(pHead, a, b, "ameryka_polnocna");
-	usun_liste_pracownikow(&pHead);
+	argumenty zapytanie = odczytaj_argumenty(argc, argv);
+	if (zapytanie.plik_odczyt != NULL)
+	{
+		lista_pracownikow* pHead = wczytaj_dane_z_pliku(zapytanie.plik_odczyt);
+		wyswietl_dane_zestawienie(zapytanie, pHead);
+		usun_liste_pracownikow(&pHead);
+	}
 	_CrtDumpMemoryLeaks();
 	return 0;
 }

@@ -139,11 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="funkcje.c" />
+    <ClCompile Include="funkcje_do_wyswietlania.c" />
+    <ClCompile Include="funkcje_pomocnicze.c" />
+    <ClCompile Include="funkcje_wczytujace_dane.c" />
+    <ClCompile Include="funkcje_zarzadzajace_listami.c" />
     <ClCompile Include="Źródło.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="funkcje.h" />
+    <ClInclude Include="funkcje_do_wyswietlania.h" />
+    <ClInclude Include="funkcje_pomocnicze.h" />
+    <ClInclude Include="funkcje_wczytujace_dane.h" />
+    <ClInclude Include="funkcje_zarzadzajace_listami.h" />
     <ClInclude Include="struktury.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
