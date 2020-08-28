@@ -131,38 +131,25 @@ argumenty odczytaj_argumenty(int argc, char* argv[])
 	argumenty wynik = { NULL,NULL,NULL,NULL,NULL,{0,0,0},{99,99,9999} };
 	for (int i = 0; i < argc - 1; i++)
 	{
-		if (strcmp(argv[i], "-p") == 0)
-		{
+		if (strcmp(argv[i], "-p") == 0){
 			i++;
 			wynik.plik_odczyt = argv[i];
-		}
-		if (strcmp(argv[i], "-t") == 0)
-		{
+		}else if (strcmp(argv[i], "-t") == 0){
 			i++;
 			wynik.typ = argv[i];
-		}
-		if (strcmp(argv[i], "-i") == 0)
-		{
+		}else if (strcmp(argv[i], "-i") == 0){
 			i++;
 			wynik.imie = argv[i];
-		}
-		if (strcmp(argv[i], "-n") == 0)
-		{
+		}else if (strcmp(argv[i], "-n") == 0){
 			i++;
 			wynik.nazwisko = argv[i];
-		}
-		if (strcmp(argv[i], "-k") == 0)
-		{
+		}else if (strcmp(argv[i], "-k") == 0){
 			i++;
 			wynik.kontynent = argv[i];
-		}
-		if (strcmp(argv[i], "-dod") == 0)
-		{
+		}else if (strcmp(argv[i], "-dod") == 0){
 			i++;
 			wynik.dataOd = wczytaj_date_z_tekstu(argv[i]);
-		}
-		if (strcmp(argv[i], "-ddo") == 0 && i + 1 < argc)
-		{
+		}else if (strcmp(argv[i], "-ddo") == 0 && i + 1 < argc){
 			i++;
 			wynik.dataDo = wczytaj_date_z_tekstu(argv[i]);
 		}

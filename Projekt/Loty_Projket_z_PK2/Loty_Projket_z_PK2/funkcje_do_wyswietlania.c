@@ -120,13 +120,11 @@ void wyswietl_zestawienie_lotow_pracownika_do_kontynentow(lista_pracownikow* pHe
 		}
 	}else
 		printf("Nie znaleziono pracownika\n");
-
 }
 void wyswietl_zestawienie_lotow_pracownikow_do_kontynentu(lista_pracownikow* pHead, data dataOd, data dataDo, char* kontynent)
 {
 	int kontynent_liczba = kontynent_na_liczbe(kontynent);
-	if (kontynent_liczba == 404)
-	{
+	if (kontynent_liczba == 404){
 		printf("Taki kontynent nie istnieje!");
 		return;
 	}
@@ -146,15 +144,11 @@ void wyswietl_zestawienie_lotow_pracownikow_do_kontynentu(lista_pracownikow* pHe
 	printf("============================================\n");
 	printf("%-12s %-12s %-7s %-5s %-5s \n", "Imie", "Nazwisko", "Mile", "godz.", "min.");
 	printf("--------------------------------------------\n");
-	while (pHead != NULL)
-	{
+	while (pHead != NULL){
 		loty = pHead->loty;
-		while (loty != NULL)
-		{
-			if (jaki_kontynent(loty->kraj_koncowy) == kontynent_liczba)
-			{
-				if (porownaj_daty(dataOd, loty->data) <= 0 && porownaj_daty(dataDo, loty->data) >= 0)
-				{
+		while (loty != NULL){
+			if (jaki_kontynent(loty->kraj_koncowy) == kontynent_liczba){
+				if (porownaj_daty(dataOd, loty->data) <= 0 && porownaj_daty(dataDo, loty->data) >= 0){
 					mile += loty->mile_lotu;
 					godziny += loty->godziny_lotu;
 					minuty += loty->minuty_lotu;
@@ -169,7 +163,6 @@ void wyswietl_zestawienie_lotow_pracownikow_do_kontynentu(lista_pracownikow* pHe
 		minuty = godziny = mile = 0;
 		pHead = pHead->next;
 	}
-
 }
 void wyswietl_dane_zestawienie(argumenty arg, lista_pracownikow * pHead)
 {
@@ -179,27 +172,19 @@ void wyswietl_dane_zestawienie(argumenty arg, lista_pracownikow * pHead)
 		if (strcmp(typ, "LP") == 0)
 		{
 			wyswietl_liste_pracownikow(pHead);
-		}else if (strcmp(typ, "LLWP") == 0)
-		{
+		}else if (strcmp(typ, "LLWP") == 0){
 			wyswietl_pracownikow_i_ich_loty(pHead, arg.dataOd, arg.dataDo);
-		}else if (strcmp(typ, "ZLWPDK") == 0 && arg.kontynent != NULL)
-		{
+		}else if (strcmp(typ, "ZLWPDK") == 0 && arg.kontynent != NULL){
 			wyswietl_zestawienie_lotow_pracownikow_do_kontynentu(pHead, arg.dataOd, arg.dataDo, arg.kontynent);
-		}
-		else if(arg.imie != NULL && arg.nazwisko != NULL)
-		{
+		}else if(arg.imie != NULL && arg.nazwisko != NULL){
 			if (strcmp(typ, "LLP") == 0)
 			{
 				wyswietl_pracownika_i_jego_loty(znajdz_pracownika_w_liscie(pHead, arg.imie, arg.nazwisko), arg.dataOd, arg.dataDo);
-			}else if (strcmp(typ, "ZLPDWK") == 0)
-			{
+			}else if (strcmp(typ, "ZLPDWK") == 0){
 				wyswietl_zestawienie_lotow_pracownika_do_kontynentow(znajdz_pracownika_w_liscie(pHead, arg.imie, arg.nazwisko), arg.dataOd, arg.dataDo);
 			}
-		}
-		else
-		{
+		}else
 			printf("Podano zle dane\n");
-		}
 		free(typ);
 	}
 }
