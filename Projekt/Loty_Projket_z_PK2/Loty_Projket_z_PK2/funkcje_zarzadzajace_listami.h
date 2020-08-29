@@ -20,7 +20,7 @@ int ilosc_elementow_w_liscie_pracownikow(lista_pracownikow* pHead);
 void dodaj_pracownika_do_listy(lista_pracownikow** pHead, lista_pracownikow** pracownik);
 /** Funkcja dodaje element do listy lotów
 	@param pHead wskaŸnik na g³owê listy lotów
-	@param wskaŸnik na lot
+	@param pracownik wskaŸnik na lot
 	*/
 void dodaj_lot_do_listy(lista_lotow** pHead, lista_lotow** lot);
 /** Funkcja usuwa wszystkie elementy w liœcie pracowników
