@@ -23,5 +23,15 @@ lista_pracownikow* wczytaj_dane_z_pliku(char* nazwa_pliku);
 	@return odczytane prze³¹czniki w strukturze "argumenty"
 	*/
 argumenty odczytaj_argumenty(int argc, char* argv[]);
+/** Funkcja wczytuj¹ca pojedyñczy lot z pliku
+	@param plik struktura plik z której odczytywane s¹ dane
+	@return wskaŸnik na lot
+	*/
+lista_lotow* wczytaj_lot(FILE* plik);
+/** Funkcja wczytuj¹ca pojedyñczego pracownika z pliku
+	@param plik struktura plik z której odczytywane s¹ dane
+	@return wskaŸnik na pracownika
+	*/
+lista_pracownikow* wczytaj_pracownika(FILE* plik);
 
 #endif

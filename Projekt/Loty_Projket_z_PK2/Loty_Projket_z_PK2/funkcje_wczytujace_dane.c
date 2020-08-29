@@ -125,7 +125,6 @@ data wczytaj_date_z_tekstu(char* tekst)
 	wynik.rok = tabData[2];
 	return wynik;
 }
-
 argumenty odczytaj_argumenty(int argc, char* argv[])
 {
 	argumenty wynik = { NULL,NULL,NULL,NULL,NULL,{0,0,0},{99,99,9999} };
