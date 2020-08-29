@@ -13,8 +13,8 @@ data wczytaj_date_z_tekstu(char* data);
 	*/
 char* wczytaj_napis(FILE* plik);
 /** Funkcja wczytuj¹ca wszystkie dane z pliku 
-	@param kraj nazwa kraju
-	@return liczba odpowiadaj¹ca nazwie kontynentu
+	@param nazwa_pliku nazwa pliku z do odczytu
+	@return wskaŸnik na g³owê listy pracowników
 	*/
 lista_pracownikow* wczytaj_dane_z_pliku(char* nazwa_pliku);
 /** Funkcja odczytuje prze³¹czniki programu i zwraca je w strukturze "argumenty"
